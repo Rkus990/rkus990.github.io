@@ -3,184 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Researcher in Computer Science</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Name | Researcher at IIT Bombay</title>
+    <!-- Link to Google Fonts (for sleek font styling) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Basic Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* Basic Layout */
+        body {
+            font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #002b45; /* IIT Bombay color */
+            background-color: #1A3C54; /* IIT Bombay Blue */
             color: white;
-            padding: 2rem 1rem;
             text-align: center;
-            border-bottom: 4px solid #005bb5;
+            padding: 3rem 1rem;
         }
 
         header h1 {
-            margin: 0;
             font-size: 3rem;
-            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
         header p {
             font-size: 1.2rem;
+            font-weight: 300;
         }
 
-        .profile-container {
+        /* Main content */
+        .content {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 2rem;
+            height: 100vh;
+            text-align: center;
+            padding: 2rem 1rem;
         }
 
-        .profile-image {
-            border-radius: 50%;
-            border: 5px solid white;
-            margin-right: 2rem;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .intro {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        .profile {
+            max-width: 800px;
             background-color: white;
+            padding: 3rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        .intro h2 {
-            font-size: 2rem;
-            color: #002b45;
-            margin-bottom: 1rem;
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 5px solid white;
         }
 
-        .intro p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            margin-top: 1rem;
-            background-color: #0074d9;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #005bb5;
-        }
-
-        /* Research Section */
-        .research, .academic, .contact {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .accordion {
-            margin-top: 1rem;
-        }
-
-        .accordion-item {
-            margin-bottom: 1rem;
-        }
-
-        .accordion-button {
-            background-color: #0074d9;
-            color: white;
-            padding: 1rem;
-            width: 100%;
-            border: none;
-            text-align: left;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .accordion-button:hover {
-            background-color: #005bb5;
-        }
-
-        .accordion-content {
-            display: none;
-            background-color: #f1f1f1;
-            padding: 1rem;
-            margin-top: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .accordion-content p {
-            margin: 0;
-        }
-
-        .academic ul, .contact ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .academic li, .contact li {
+        .profile h2 {
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
+        .profile h3 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        /* Research, Experience, and Service Sections */
+        .profile .sections {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .profile .section-title {
+            font-size: 1.6rem;
+            color: #1A3C54;
+            margin-bottom: 0.8rem;
+        }
+
+        .profile .section-content {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links li {
+            margin: 0 10px;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: #0074d9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #005bb5;
+        }
+
         footer {
-            background-color: #002b45;
+            background-color: #1A3C54;
             color: white;
             text-align: center;
             padding: 1rem;
         }
 
         footer p {
-            margin: 0;
+            font-size: 1rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .intro h2 {
-                font-size: 1.8rem;
-            }
-
-            .profile-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-                margin-bottom: 1rem;
-            }
-
-            section {
-                padding: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -188,90 +144,29 @@
     <!-- Header -->
     <header>
         <h1>Your Name</h1>
-        <p>Researcher in Computer Science | IIT Bombay</p>
+        <p>Ph.D. Student | Computer Science and Engineering | IIT Bombay</p>
     </header>
 
-    <!-- Profile Section -->
-    <div class="profile-container">
-        <!-- Your Photo -->
-        <img src="[YOUR PHOTO URL]" alt="Your Photo" class="profile-image">
+    <!-- Main Content -->
+    <div class="content">
+        <div class="profile">
 
-        <div class="intro">
-            <h2>About Me</h2>
-            <p>Hello! I'm <strong>Your Name</strong>, a researcher at the Department of Computer Science and Engineering at IIT Bombay. My research interests include <strong>[Your Research Focus]</strong>, with a particular emphasis on <strong>[Area 1]</strong>, <strong>[Area 2]</strong>, and <strong>[Area 3]</strong>.</p>
-            <p>I am excited to contribute to innovations in [mention your specific area].</p>
-            <a href="#research" class="button">Learn more about my research</a>
-        </div>
-    </div>
+            <!-- Profile Image -->
+            <img src="https://drive.google.com/uc?export=view&id=18Q_1R9ecCVfskZj66xwooBszPo4M00Ra" alt="Your Profile Picture">
 
-    <!-- Research Section -->
-    <section class="research" id="research">
-        <h2>Research</h2>
-        <p>My research interests span a wide range of topics in Computer Science. Below are some key areas of focus:</p>
+            <!-- Personal Information -->
+            <h2>Your Name</h2>
+            <h3>Ph.D. Student, Department of Computer Science</h3>
+            <p>Email: <a href="mailto:your-email@iitb.ac.in">your-email@iitb.ac.in</a></p>
 
-        <div class="accordion">
-            <!-- Research Area 1 -->
-            <div class="accordion-item">
-                <button class="accordion-button">Research Area 1: [Area Name]</button>
-                <div class="accordion-content">
-                    <p>Description of your research area 1 goes here.</p>
-                </div>
-            </div>
-
-            <!-- Research Area 2 -->
-            <div class="accordion-item">
-                <button class="accordion-button">Research Area 2: [Area Name]</button>
-                <div class="accordion-content">
-                    <p>Description of your research area 2 goes here.</p>
-                </div>
-            </div>
-
-            <!-- Research Area 3 -->
-            <div class="accordion-item">
-                <button class="accordion-button">Research Area 3: [Area Name]</button>
-                <div class="accordion-content">
-                    <p>Description of your research area 3 goes here.</p>
-                </div>
-            </div>
-        </div>
-
-        <a href="#publications" class="button">See my publications</a>
-    </section>
-
-    <!-- Academic Section -->
-    <section class="academic" id="academic">
-        <h2>Academic Background</h2>
-        <p>I am currently pursuing research in the field of Computer Science at IIT Bombay. Here is a quick overview of my academic qualifications:</p>
-        <ul>
-            <li><strong>Ph.D. in Computer Science</strong>, IIT Bombay, India (Expected [Year])</li>
-            <li><strong>M.Tech</strong>, [University Name], India ([Year])</li>
-            <li><strong>B.Tech</strong>, [University Name], India ([Year])</li>
-        </ul>
-        <p>For a detailed overview of my academic background, feel free to download my CV below.</p>
-        <a href="[Link to CV]" class="button">Download CV</a>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <p>You can reach me at my academic email address: <strong><a href="mailto:yourname@iitb.ac.in">yourname@iitb.ac.in</a></strong></p>
-        <p>Feel free to connect with me on the following platforms:</p>
-        <ul>
-            <li><a href="[LinkedIn URL]" target="_blank">LinkedIn</a></li>
-            <li><a href="[ResearchGate URL]" target="_blank">ResearchGate</a></li>
-            <li><a href="[GitHub URL]" target="_blank">GitHub</a></li>
-        </ul>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Your Name | IIT Bombay</p>
-    </footer>
-
-    <script>
-        // Accordion functionality for interactive content
-        const accordionButtons = document.querySelectorAll('.accordion-button');
-        accordionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : '
+            <!-- Research Interests Section -->
+            <div class="sections">
+                <div class="section-title">Research Interests</div>
+                <div class="section-content">
+                    I am a Ph.D. student at IIT Bombay. My research interests include:
+                    <ul>
+                        <li>Research Area 1</li>
+                        <li>Research Area 2</li>
+                        <li>Research Area 3</li>
+                    </ul>
+                    I am currently
