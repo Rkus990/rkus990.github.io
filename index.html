@@ -60,13 +60,20 @@
             text-align: center;
         }
 
+        /* Enlarged Profile Image Styling */
         .profile img {
-            width: 150px;
-            height: 150px;
+            width: 250px; /* Increased image size */
+            height: 250px; /* Increased image size */
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 2rem;
             border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds slight shadow to the image */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        .profile img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
         }
 
         .profile h2 {
@@ -152,7 +159,7 @@
         <div class="profile">
 
             <!-- Profile Image -->
-            <img src="https://drive.google.com/uc?export=view&id=18Q_1R9ecCVfskZj66xwooBszPo4M00Ra" alt="Your Profile Picture">
+            <img src="images/profile.jpg" alt="Your Profile Picture">
 
             <!-- Personal Information -->
             <h2>Your Name</h2>
@@ -169,4 +176,40 @@
                         <li>Research Area 2</li>
                         <li>Research Area 3</li>
                     </ul>
-                    I am currently
+                    I am currently exploring [brief description of your research or thesis].
+                </div>
+            </div>
+
+            <!-- Industry Experience Section -->
+            <div class="sections">
+                <div class="section-title">Industry Experience</div>
+                <div class="section-content">
+                    I have worked as [Your role] at [Company Name], where I contributed to [Brief description of work/impact].
+                </div>
+            </div>
+
+            <!-- Academic Service Section -->
+            <div class="sections">
+                <div class="section-title">Academic Service</div>
+                <div class="section-content">
+                    I have been involved in [mention any academic services, e.g., course assistantships, reviewing papers, organizing events, etc.].
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <ul class="social-links">
+                <li><a href="https://github.com/Rkus990" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="mailto:your-email@iitb.ac.in" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Name | IIT Bombay</p>
+    </footer>
+
+</body>
+</html>
