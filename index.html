@@ -4,214 +4,362 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahul Kapur | Researcher at IIT Bombay</title>
-    <!-- Link to Google Fonts (for sleek font styling) -->
+    <!-- Google Fonts and Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <!-- Link to Font Awesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Basic Layout */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
+			font-family: 'Poppins', sans-serif;
+            background-color: #1A3C54;
             color: #333;
             line-height: 1.6;
         }
 
         header {
-            background-color: #1A3C54; /* IIT Bombay Blue */
+            background-color: #1A3C54;
             color: white;
             text-align: center;
             padding: 3rem 1rem;
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; font-weight: 300; }
 
-        header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-
-        /* Main content */
-        .content {
+        .container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            min-height: 100vh;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 270px;
             height: 100vh;
-            text-align: center;
+            background: white;
+            border-right: 1px solid #eee;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 2rem 1rem;
+            overflow-y: auto;
         }
-
-        .profile {
-            max-width: 800px;
-            background-color: white;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* Enlarged Profile Image Styling */
-        .profile img {
-            width: 250px; /* Increased image size */
-            height: 250px; /* Increased image size */
+        .sidebar img {
+            width: 100%;
+            max-width: 180px;
+            min-width: 100px;
+            height: auto;
             border-radius: 50%;
-            object-fit: contain;
-            margin-bottom: 2rem;
-            margin-top: 2 rem;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds slight shadow to the image */
-            transition: transform 0.3s ease; /* Smooth hover effect */
-        }
-
-        .profile img:hover {
-            transform: scale(1.1); /* Slight zoom effect on hover */
-        }
-
-        .profile h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile h3 {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .profile p {
-            font-size: 1rem;
-            color: #777;
             margin-bottom: 1rem;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            object-fit: contain;
+            background: #fff;
         }
+		
 
-        /* Research, Experience, and Service Sections */
-        .profile .sections {
-            text-align: left;
-            margin-top: 2rem;
-        }
 
-        .profile .section-title {
-            font-size: 1.6rem;
-            color: #1A3C54;
-            margin-bottom: 0.8rem;
-        }
-
-        .profile .section-content {
-            font-size: 1.1rem;
-            color: #555;
+        .profile-caption {
+            text-align: center;
+            font-size: 1rem;
+            color: #333;
             margin-bottom: 1.5rem;
         }
-
-        .social-links {
+        .sidebar .social-links {
             list-style-type: none;
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
-
-        .social-links li {
-            margin: 0 10px;
-        }
-
-        .social-links a {
+        .sidebar .social-links li { margin: 0 10px; }
+        .sidebar .social-links a {
             font-size: 1.5rem;
             color: #0074d9;
             text-decoration: none;
             transition: color 0.3s ease;
+			display: inline-flex;    
+			align-items: center;
+        }
+        .sidebar .social-links a:hover { color: #005bb5; }
+        .sidebar .social-links img.cv-icon {
+            width: 2em;
+            height: auto;
+            max-width: 1.5em;
+            min-width: 1.5em;
+            vertical-align: middle;
+            filter: invert(63%) sepia(50%) saturate(500%) hue-rotate(180deg) brightness(100%) contrast(100%);
+            transition: filter 0.3s ease;
+        }
+		footer {
+    width: 100%;
+    background: #183850; /* matches your screenshot */
+    color: #fff;
+    text-align: right;
+    padding: 1.2em 2.5em 0.7em 0;
+    font-size: 1.08em;
+    margin-top: 2em;
+    letter-spacing: 0.01em;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+
+footer a {
+    color: #6c9edb;
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0.2em 0;
+}
+		.cv-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em; /* Fine-tunes baseline alignment */
+  display: inline-block;
+}
+        .sidebar .social-links img.cv-icon:hover {
+            filter: invert(50%) sepia(100%) saturate(1200%) hue-rotate(180deg) brightness(110%) contrast(100%);
         }
 
-        .social-links a:hover {
-            color: #005bb5;
+        .main-content {
+            margin-left: 270px;
+            flex: 1;
+            padding: 2.5rem 2rem;
+            min-width: 0;
         }
 
-        footer {
-            background-color: #1A3C54;
-            color: white;
-            text-align: center;
-            padding: 1rem;
+        .profile {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
         }
+		
+.section-content {
+    margin-left: 1em;     /* Indent bullets under heading */
+    padding-left: 1.2em;  /* Extra space for bullets */
+    font-size: 1.05em;    /* Slightly larger, but not excessive */
+    line-height: 1.6;     /* Comfortable line spacing */
+    margin-bottom: 1.2em; /* Space after the list */
+}
+.first-line-indent {
+  text-indent: 2em; 
+}
+body, .profile, .section-content, .profile li, .profile p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.section-content ul,
+.section-content ol {
+    margin-left: 2em;     /* Indent bullets under heading */
+    padding-left: 1.2em;  /* Extra space for bullets */
+    font-size: 1.05em;    /* Slightly larger, but not excessive */
+    line-height: 1.6;     /* Comfortable line spacing */
+    margin-bottom: 1.2em; /* Space after the list */
+}
+.research-tags {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
 
-        footer p {
-            font-size: 1rem;
+.tag {
+  display: inline-block;
+  background: #e9f3fb;
+  color: #0074d9;
+  font-size: 0.86em;
+  padding: 0.18em 0.8em;
+  border-radius: 1em;
+  border: 1px solid #b6d3ec;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+}
+.tag:hover {
+  background: #0074d9;
+  color: #fff;
+  border-color: #0074d9;
+}
+
+        .profile .sections { text-align: left; margin-top: 2rem; }
+        .profile .section-title { font-size: 1.3rem; color: #1A3C54; margin-bottom: 0.6rem; }
+        .profile .section-content { font-size: 1rem; color: #555; margin-bottom: 1.2rem; }
+
+        /* Responsive Design */
+        @media (max-width: 1000px) {
+            .sidebar { width: 210px; padding: 1.2rem 0.5rem; }
+            .main-content { margin-left: 210px; padding: 1.5rem 0.8rem; }
         }
-
+        @media (max-width: 800px) {
+            .container { flex-direction: column; }
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                box-shadow: none;
+                flex-direction: row;
+                justify-content: center;
+                padding: 1rem 0.5rem;
+            }
+            .main-content { margin-left: 0; padding: 1rem 0.5rem; }
+        }
+        @media (max-width: 600px) {
+            header { padding: 2rem 0.5rem; }
+            .profile { padding: 1rem; }
+            .profile .section-title { font-size: 1.1rem; }
+            .profile .section-content { font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
+    <!--
     <header>
         <h1>Rahul Kapur</h1>
         <p>Ph.D. Student | Computer Science and Engineering | IIT Bombay</p>
     </header>
+    -->
 
-    <!-- Main Content -->
-    <div class="content">
-        <div class="profile">
-
-            <!-- Profile Image -->
+    <div class="container">
+        <!-- Sidebar (Fixed Left) -->
+        <div class="sidebar">
             <img src="images/profile.jpg" alt="Your Profile Picture">
-
-            <!-- Personal Information -->
-            <h2>Rahul Kapur</h2>
-            <h3>
-    Ph.D. Student, Computer Science & Engineering<br>
-    Indian Institute of Technology, Bombay<br>
-</h3>
-
-            <!-- Research Interests Section -->
-            <div class="sections">
-            <div class="section-title">Introduction</div>
-    <div class="section-content">
-        <p>I am a first-year Ph.D. student in Computer Science and Engineering at <a href="https://www.cse.iitb.ac.in/" target="_blank">Indian Institute of Technology, Bombay</a>, advised by <a href="https://www.cse.iitb.ac.in/~supratik/" target="_blank">Prof. Supratik Chakraborty</a> and <a href="https://www.cse.iitb.ac.in/~akshayss/" target="_blank">Prof. S Akshay</a>.</p>
-        
-        <p> Prior to joining IIT-B, I was working as a research assistant (2022-24) guided by <a href="https://web.cs.ucla.edu/~yzsun/" target="_blank">  Prof. Yizhou Sun </a> at <a href="https://www.cs.ucla.edu/" target="_blank">University of California, Los Angeles</a> during and after having completed my Master's in Computer Science (2021-23). 
-        <p> I also completed a stint of 3 years (2017-20) as a Software Engineer at <a href="https://research.samsung.com/sri-n" target="_blank">Samsung Research Institute, Noida</a>  soon after I graduated in Electronics engineering from  <a href="https://iitbhu.ac.in/dept/ece" target="_blank">Indian Institute of Technology (Banaras Hindu University), Varanasi</a>  (2013-17).
-    </div>
-                <div class="section-title">Research Interests</div>
-                <div class="section-content">
-                    My current research is focused on synthesizing systems from relational specifications that are accurately represented in logic. To this end, I incorporate studies in knowledge compilation and synthesis as a means to guarantee correct-by-construction systems that find ubiquitous applications across AI. This is motivated by need of central issues pervading current black-box AI systems that are applied in safety-critical settings such as need of explainability, safety guarantees, interpretability and provable correctness. 
-                </div>
+            <div class="profile-caption">
+                <h2>Rahul Kapur</h2>
+                <h3>
+                    Ph.D. Student, Computer Science & Engineering<br>
+                    Indian Institute of Technology, Bombay<br>
+                </h3>
             </div>
-
-
-            <!-- Academic Service Section -->
-            <div class="sections">
-                <div class="section-title">Academic Service</div>
-                <div class="section-content">
-                    I am currently serving as a Teaching Assistant for undergraduate course <a href="https://www.cse.iitb.ac.in/~akshayss/courses/cs105-2024/cs105-2024.html" target="_blank">CS 105: Discrete Structures</a>. At UCLA, I served as a Teaching Assistant for <a href="https://web.cs.ucla.edu/classes/winter23/cs32/syllabus.html" target="_blank">CS 32: Intro to Computer Science (C++)</a>, <a href="https://catalog.registrar.ucla.edu/course/2022/stats10?siteYear=2022" target="_blank">Stats 10C: Intro to Statistical Reasoning</a>, Foundations of ML at <a href="https://samueli.ucla.edu/breakthroughtech-ai-losangeles/" target="_blank">Break Through Tech AI, UCLA</a>.
-                </div>
-            </div>
-            
-            To view my prior work, please check my <a href="https://drive.google.com/file/d/18bibyijUDPjOzGEn0_p64HC0rk64dAxu/view?usp=sharing" target="_blank">CV</a>! 
-            <p> Here are my social links: </p>
-
-            <!-- Social Links -->
             <ul class="social-links">
+                <li>
+  <a href="https://drive.google.com/file/d/18bibyijUDPjOzGEn0_p64HC0rk64dAxu/view?usp=sharing" target="_blank" title="CV">
+    <svg class="cv-icon" viewBox="0 0 32 32" aria-label="CV">
+  <rect width="32" height="32" rx="6" fill="#fff"/>
+  <rect x="1" y="1" width="30" height="30" rx="5" fill="none" stroke="#0074d9" stroke-width="2"/>
+  <text x="50%" y="50%" font-size="16" font-family="Arial, sans-serif" font-weight="bold" fill="#0074d9" text-anchor="middle" dominant-baseline="middle">CV</text>
+</svg>
+  </a>
+</li>
                 <li><a href="https://github.com/Rkus990" target="_blank"><i class="fab fa-github"></i></a></li>
                 <li><a href="https://scholar.google.com/citations?user=IA0S8z0AAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a></li>
                 <li><a href="https://www.linkedin.com/in/cretrepre-23-repre/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                 <li><a href="mailto:gdrkr@cse.iitb.ac.in" target="_blank"><i class="fas fa-envelope"></i></a></li>
-                
             </ul>
-
+        </div>
+        <!-- Main Content (Scrollable) -->
+        <div class="main-content">
+            <div class="profile">
+                <div class="sections">
+                    <div class="section-title">Introduction</div>
+                    <div class="section-content">
+                        <p class="first-line-indent">I am a second-year Ph.D. student in Computer Science and Engineering at <a href="https://www.cse.iitb.ac.in/" target="_blank">Indian Institute of Technology, Bombay</a>, advised by <a href="https://www.cse.iitb.ac.in/~supratik/" target="_blank">Prof. Supratik Chakraborty</a> and <a href="https://www.cse.iitb.ac.in/~akshayss/" target="_blank">Prof. S Akshay</a>.</p>
+                        <p class="first-line-indent">Prior to joining IIT-B, I was working as a research assistant (2022-24) guided by <a href="https://web.cs.ucla.edu/~yzsun/" target="_blank">Prof. Yizhou Sun</a> at <a href="https://www.cs.ucla.edu/" target="_blank">University of California, Los Angeles</a> during and after having completed my Master's in Computer Science (2021-23).</p>
+                        <p class="first-line-indent">I also completed a stint of 3 years (2017-20) as a Software Engineer at <a href="https://research.samsung.com/sri-n" target="_blank">Samsung Research Institute, Noida</a> soon after I graduated in Electronics engineering from <a href="https://iitbhu.ac.in/dept/ece" target="_blank">Indian Institute of Technology (Banaras Hindu University), Varanasi</a> (2013-17).</p>
+                    </div>
+                    <div class="section-title">Research Statement</div>
+                    <div class="section-content">
+					<p class="first-line-indent">
+					<strong>Automated Functional Synthesis </strong> is the problem of synthesizing outputs as functions of inputs, while satisfying a declarative relational specification between inputs and outputs. In other words, provided synthesis of such a system is complete, it is guaranteed to meet the high-level specifications it is designed for, and hence correct-by-construction. 
+					</p>
+					<p class="first-line-indent">
+					<strong> Recent advances </strong> in this problem has served as a meeting place of techniques rich in <u>knowledge compilation</u>, <u>automated reasoning</u> and <u>learning</u>.
+					</p>
+					<p class="first-line-indent">
+					While the black-box AI systems have gained upsurge, it is important to realize that they are <strong> far from being correct </strong> and increasingly even more so in cases when they run into safety critical pipelines.
+					</p>
+					<p class="first-line-indent">
+					Complexity-theoretic arguments indicate that it is extremely unlikely that the problem of synthesis has any polynomial-time algorithm. <strong> Our work focuses on constructing systems that can achieve correctness-by-construction. What makes these algorithms tick? What are the open problems? </strong> See <a href="https://www.linkedin.com/posts/activity-7328185747750993921-2-dK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC2BaCEBOXjNqMgRSwK6EQo1qw5ME8WXcVM" target="_blank">this</a>!
+					</p>
+					
+					<div class="research-tags">
+  <span class="tag">Synthesis</span>
+  <span class="tag">Formal Methods</span>
+  <span class="tag">Knowledge Compilation</span>
+  <span class="tag">Automated Reasoning</span>
+  <span class="tag">Neurosymbolic AI</span>
+</div>
+                           
+                    </div>
+                    
+                    <div class="section-title">Academic Service</div>
+                    <div class="section-content">
+                      <p>I had opportunity of serving as a Teaching Assistant for the following courses:</p>
+                      <ul>
+                        <li><a href="https://www.cse.iitb.ac.in/~supratik/courses/cs228m/" target="_blank">CS 228M: Logic in Computer Science</a>, IIT Bombay (2025)</li>
+                        <li><a href="https://www.cse.iitb.ac.in/~akshayss/courses/cs105-2024/cs105-2024.html" target="_blank">CS 105: Discrete Structures</a>, IIT Bombay (2024)</li>
+                        <li><a href="https://web.cs.ucla.edu/classes/winter23/cs32/syllabus.html" target="_blank">CS 32: Intro to Computer Science (C++)</a>, UCLA (2023)</li>
+                        <li>Foundations of ML at <a href="https://samueli.ucla.edu/breakthroughtech-ai-losangeles/" target="_blank">Break Through Tech AI</a>, UCLA (2023)</li>
+                        <li><a href="https://catalog.registrar.ucla.edu/course/2022/stats10?siteYear=2022" target="_blank">Stats 10C: Intro to Statistical Reasoning</a>, UCLA (2022)</li>
+                      </ul>
+                      <p>
+                        I also had a brief yet fulfilling opportunity of serving as a Research Assistant under the guidance of: 
+                        <a href="https://web.cs.ucla.edu/~rafail/" target="_blank">Prof. Rafail Ostrovsky</a> (2022-23),  
+                        <a href="https://ph.ucla.edu/about/faculty-staff-directory/akihiro-nishi" target="_blank">Prof. Akihiro Nishi</a> (2022-23), 
+                        <a href="https://www.psych.ucla.edu/faculty-page/taogao/" target="_blank">Prof. Tao Gao</a> (2023-24), 
+                        <a href="https://web.cs.ucla.edu/~yzsun/" target="_blank">Prof. Yizhou Sun</a> (2023-24).
+                      </p>
+                    </div>
+                    <div class="section-title">Selected Scholarly Activities</div>
+                    <div class="section-content">
+                      <strong>Attended:</strong>
+                      <ul>
+                        <li>
+                          <a href="https://www.neurosymbolic.org/summerschool2024.html" target="_blank">
+                            Summer school on Neurosymbolic Programming
+                          </a>, June 10-12 2024, Salem, Massachusetts, USA
+                        </li>
+                        <li>
+                          <a href="https://www.cooperativeai.com/summer-school/summer-school-2024" target="_blank">
+                            Cooperative AI Summer School
+                          </a>, 19-23 June 2024, Santa Cruz, CA, USA
+                        </li>
+                        <li>
+                          <a href="https://sat-smt.in/index.html" target="_blank">
+                            SAT + SMT Summer School
+                          </a>, 2024, Pune, India
+                        </li>
+                      </ul>
+                      <strong>Visiting Student:</strong>
+                      <ul>
+                        <li>CSE Dept., Stanford University – March 2024</li>
+                        <li>Simons Institute for Theory of Computing, University of California, Berkeley – July 2024</li>
+                      </ul>
+                      <strong>Participant:</strong>
+                      <ul>
+                        <li>
+                          <a href="https://satisfiability.org/SAT24/" target="_blank">
+                            SAT 2024 Conference
+                          </a>, TCS Pune, India – September 2024
+                        </li>
+                        <li>
+                          <a href="https://www.fsttcs.org.in/archives/2024/program.php" target="_blank">
+                            FSTTCS 2024 Conference
+                          </a>, IIT Gandhinagar, Gujarat, India – December 2024
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Rahul Kapur | IIT Bombay</p>
+        <p>&copy; Rahul Kapur | IIT Bombay</p>
+        <p style="font-size:0.95em; color:#bbb;">
+            Web-Page Design assistance by <a href="https://www.perplexity.ai/" target="_blank" style="color:#6c9edb; text-decoration:underline;">Perplexity AI</a>
+        </p>
     </footer>
-
 </body>
 </html>
