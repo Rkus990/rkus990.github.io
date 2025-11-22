@@ -35,34 +35,35 @@
         }
 
         .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 270px;
-            height: 100vh;
-            background: white;
-            border-right: 1px solid #eee;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.04);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 1rem;
-            overflow-y: auto;
-        }
-        .sidebar img {
-            width: 100%;
-            max-width: 180px;
-            min-width: 100px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            object-fit: contain;
-            background: #fff;
-        }
-		
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 310px;                /* Increased sidebar width */
+			height: 100vh;
+			background: white;
+			border-right: 1px solid #eee;
+			box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+			z-index: 100;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 3rem 1rem 3rem 1rem; /* More vertical padding */
+			justify-content: flex-start;
+			overflow-y: auto;
+		}
+
+		.sidebar img {
+			width: 220px;    /* Increase image size */
+			max-width: 220px;
+			min-width: 120px;
+			height: 220px;   /* Make height match width for circular effect */
+			border-radius: 50%;
+			margin-bottom: 1.5rem; /* More spacing below image */
+			border: 5px solid #f7f7f8;
+			box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+			object-fit: cover;     /* Ensures image doesn't distort */
+			background: #fff;
+		}		
 
 
         .profile-caption {
@@ -196,23 +197,24 @@ body, .profile, .section-content, .profile li, .profile p {
 
         /* Responsive Design */
         @media (max-width: 1000px) {
-            .sidebar { width: 210px; padding: 1.2rem 0.5rem; }
-            .main-content { margin-left: 210px; padding: 1.5rem 0.8rem; }
-        }
+			.sidebar { width: 220px; padding: 2rem 0.5rem 2rem 0.5rem; }
+			.sidebar img { width: 150px; height: 150px; }
+		}
         @media (max-width: 800px) {
-            .container { flex-direction: column; }
-            .sidebar {
-                position: static;
-                width: 100%;
-                height: auto;
-                border-right: none;
-                box-shadow: none;
-                flex-direction: row;
-                justify-content: center;
-                padding: 1rem 0.5rem;
-            }
-            .main-content { margin-left: 0; padding: 1rem 0.5rem; }
-        }
+			.container { flex-direction: column; }
+			.sidebar {
+				position: static;
+				width: 100%;
+				height: auto;
+				border-right: none;
+				box-shadow: none;
+				flex-direction: row;
+				justify-content: center;
+				padding: 2rem 0.2rem;
+				align-items: center;
+			}
+			.sidebar img { width: 120px; height: 120px; }
+		}
         @media (max-width: 600px) {
             header { padding: 2rem 0.5rem; }
             .profile { padding: 1rem; }
